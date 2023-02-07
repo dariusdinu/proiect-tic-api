@@ -8,7 +8,7 @@ const origin = (origin, callback) => {
   }
 
   // allow requests from app URL
-  if (origin === process.env.APP_BASE_URL) {
+  if (origin === 'https://tic-project-plantly.herokuapp.com') {
     return callback(null, true);
   }
 
