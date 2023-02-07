@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const router = require('./router');
 const setupCors = require('./cors/setup-cors');
 const { speedLimiter } = require('./middleware');
+const cors = require('cors');
 
 const { initializeFirestore } = require('./functions');
 initializeFirestore();
@@ -16,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(helmet());
 
 // custom cors config
-app.use(setupCors());
+app.use(cors());
 
 // add speed limiter for all requests
 app.use(speedLimiter);
